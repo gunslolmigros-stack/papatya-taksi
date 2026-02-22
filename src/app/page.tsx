@@ -327,7 +327,7 @@ export default function Home() {
             {/* Google Maps Embed */}
             <div className="w-full h-80 md:h-[500px]">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d19!2d29.4115074!3d40.8218297!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cadf003389b7dd%3A0x7c77ad6d9e260f45!2sPapatya%20taksi!5e0!3m2!1str!2str!4v1708531200000!5m2!1str!2str"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3011.5957264621147!2d29.4093!3d40.8222!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cadf003389b7dd%3A0x7c77ad6d9e260f45!2sPapatya%20taksi!5e0!3m2!1str!2str!4v1708531200000!5m2!1str!2str"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}

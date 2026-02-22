@@ -428,7 +428,7 @@ export default function Home() {
             </span>
             <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6">İş Yerimiz</h2>
             <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto">
-              �ay�rova Papatya Taksi durağımızdan görüntüler
+              Çayırova Papatya Taksi durağımızdan görüntüler
             </p>
           </motion.div>
 
@@ -668,10 +668,10 @@ export default function Home() {
               <div className="w-10 h-10 bg-gradient-to-br from-amber-400 to-amber-600 rounded-full flex items-center justify-center">
                 <Car className="w-5 h-5 text-white" />
               </div>
-              <span className="text-xl font-bold text-white">�ay�rova Papatya Taksi</span>
+              <span className="text-xl font-bold text-white">Çayırova Papatya Taksi</span>
             </motion.div>
             <p className="text-sm text-center">
-              © 2026 �ay�rova Papatya Taksi. Tüm hakları saklıdır.
+              © 2026 Çayırova Papatya Taksi. Tüm hakları saklıdır.
             </p>
             <div className="flex items-center gap-4">
               <motion.a 

@@ -125,13 +125,9 @@ export default function Home() {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              <img
-                src="/images/logo.png"
-                alt="Çayırova Papatya Taksi Logo"
-                className="w-16 h-16 md:w-20 md:h-20 rounded-xl object-contain"
-              />
-              <span className={`text-lg md:text-2xl font-bold transition-colors ${scrolled ? "text-gray-900" : "text-gray-900 md:text-gray-900"}`}>
-                Çayırova Papatya Taksi
+              <span className={`text-2xl md:text-3xl font-bold transition-colors ${scrolled ? "text-gray-900" : "text-gray-900"}`}>
+                <span className="bg-gradient-to-r from-amber-500 to-orange-600 bg-clip-text text-transparent">Papatya</span>
+                <span className="text-gray-900"> Taksi</span>
               </span>
             </motion.div>
             
@@ -244,7 +240,7 @@ export default function Home() {
                   Hemen Ara
                 </motion.a>
                 <motion.button 
-                  onClick={() => scrollToSection("iletisim")}
+                  onClick={() => scrollToSection("konum")}
                   className="inline-flex items-center justify-center gap-2 bg-white hover:bg-gray-50 text-gray-900 font-semibold px-8 py-4 rounded-2xl border-2 border-gray-200 transition-all"
                   whileHover={{ scale: 1.05, y: -2 }}
                   whileTap={{ scale: 0.95 }}
@@ -329,7 +325,7 @@ export default function Home() {
             variants={fadeInUp}
           >
             {/* Google Maps Embed */}
-            <div className="w-full h-64 md:h-80">
+            <div className="w-full h-80 md:h-[500px]">
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d19!2d29.4115074!3d40.8218297!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cadf003389b7dd%3A0x7c77ad6d9e260f45!2sPapatya%20taksi!5e0!3m2!1str!2str!4v1708531200000!5m2!1str!2str"
                 width="100%"
@@ -346,7 +342,7 @@ export default function Home() {
                 <div>
                   <h3 className="text-xl font-bold text-gray-900 mb-2">Çayırova Papatya Taksi</h3>
                   <p className="text-gray-600">
-                    Emek, 62/5. Sk., 41420 Çayırova/Kocaeli
+                    Emek, 62/6. Sk., 41420 Çayırova/Kocaeli
                   </p>
                 </div>
                 <motion.a 
@@ -640,7 +636,7 @@ export default function Home() {
               </h3>
               <div className="bg-gray-50 p-6 rounded-2xl mb-6">
                 <p className="text-lg md:text-xl text-gray-700 leading-relaxed font-medium">
-                  Emek, 62/5. Sk.,<br />
+                  Emek, 62/6. Sk.,<br />
                   41420 Çayırova/Kocaeli
                 </p>
               </div>

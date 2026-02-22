@@ -604,20 +604,36 @@ export default function Home() {
                   </div>
                   E-posta
                 </h3>
-                <motion.a 
-                  href="mailto:info@papatyataksi.com"
-                  className="flex items-center gap-4 bg-gray-50 hover:bg-amber-50 p-4 rounded-2xl transition-all"
-                  whileHover={{ x: 5 }}
-                  whileTap={{ scale: 0.98 }}
-                >
-                  <div className="w-14 h-14 bg-gradient-to-br from-amber-400 to-amber-600 rounded-full flex items-center justify-center shadow-lg">
-                    <Mail className="w-6 h-6 text-white" />
-                  </div>
-                  <div>
-                    <p className="text-sm text-gray-500">E-posta</p>
-                    <p className="text-lg md:text-xl font-bold text-gray-900">info@papatyataksi.com</p>
-                  </div>
-                </motion.a>
+                <div className="space-y-4">
+                  <motion.a 
+                    href="mailto:info@papatyataksi.com"
+                    className="flex items-center gap-4 bg-gray-50 hover:bg-amber-50 p-4 rounded-2xl transition-all"
+                    whileHover={{ x: 5 }}
+                    whileTap={{ scale: 0.98 }}
+                  >
+                    <div className="w-14 h-14 bg-gradient-to-br from-amber-400 to-amber-600 rounded-full flex items-center justify-center shadow-lg">
+                      <Mail className="w-6 h-6 text-white" />
+                    </div>
+                    <div>
+                      <p className="text-sm text-gray-500">Bilgi</p>
+                      <p className="text-lg md:text-xl font-bold text-gray-900">info@papatyataksi.com</p>
+                    </div>
+                  </motion.a>
+                  <motion.a 
+                    href="mailto:papatyat@papatyataksi.com"
+                    className="flex items-center gap-4 bg-gray-50 hover:bg-amber-50 p-4 rounded-2xl transition-all"
+                    whileHover={{ x: 5 }}
+                    whileTap={{ scale: 0.98 }}
+                  >
+                    <div className="w-14 h-14 bg-gradient-to-br from-amber-400 to-amber-600 rounded-full flex items-center justify-center shadow-lg">
+                      <Mail className="w-6 h-6 text-white" />
+                    </div>
+                    <div>
+                      <p className="text-sm text-gray-500">Destek</p>
+                      <p className="text-lg md:text-xl font-bold text-gray-900">papatyat@papatyataksi.com</p>
+                    </div>
+                  </motion.a>
+                </div>
               </div>
             </motion.div>
 
@@ -684,6 +700,14 @@ export default function Home() {
               </motion.a>
               <motion.a 
                 href="mailto:info@papatyataksi.com" 
+                className="w-10 h-10 bg-gray-800 hover:bg-amber-500 rounded-full flex items-center justify-center transition-colors"
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+              >
+                <Mail className="w-5 h-5" />
+              </motion.a>
+              <motion.a 
+                href="mailto:papatyat@papatyataksi.com" 
                 className="w-10 h-10 bg-gray-800 hover:bg-amber-500 rounded-full flex items-center justify-center transition-colors"
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}

@@ -128,7 +128,7 @@ export default function Home() {
               <img
                 src="/images/logo.png"
                 alt="Çayırova Papatya Taksi Logo"
-                className="w-16 h-16 md:w-24 md:h-24 rounded-xl object-cover shadow-lg border-2 border-amber-500"
+                className="w-16 h-16 md:w-20 md:h-20 rounded-xl object-contain"
               />
               <span className={`text-lg md:text-2xl font-bold transition-colors ${scrolled ? "text-gray-900" : "text-gray-900 md:text-gray-900"}`}>
                 Çayırova Papatya Taksi

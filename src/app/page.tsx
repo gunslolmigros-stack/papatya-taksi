@@ -84,6 +84,7 @@ export default function Home() {
   const phoneNumbers = [
     { number: "0507 117 35 00", label: "Telefon 1" },
     { number: "0507 127 35 00", label: "Telefon 2" },
+    { number: "0262 641 35 00", label: "Sabit Hat" },
   ];
 
   const scrollToSection = (id: string) => {
@@ -120,22 +121,24 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16 md:h-20">
             <motion.div 
-              className="flex items-center gap-2"
+              className="flex items-center gap-3"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              <div className="w-10 h-10 md:w-12 md:h-12 bg-gradient-to-br from-amber-400 to-amber-600 rounded-full flex items-center justify-center shadow-lg">
-                <Car className="w-5 h-5 md:w-6 md:h-6 text-white" />
-              </div>
-              <span className={`text-xl md:text-2xl font-bold transition-colors ${scrolled ? "text-gray-900" : "text-gray-900 md:text-gray-900"}`}>
-                Papatya Taksi
+              <img
+                src="/images/logo.png"
+                alt="Çayırova Papatya Taksi Logo"
+                className="w-16 h-16 md:w-24 md:h-24 rounded-xl object-cover shadow-lg border-2 border-amber-500"
+              />
+              <span className={`text-lg md:text-2xl font-bold transition-colors ${scrolled ? "text-gray-900" : "text-gray-900 md:text-gray-900"}`}>
+                Çayırova Papatya Taksi
               </span>
             </motion.div>
             
             {/* Desktop Menu */}
             <div className="hidden md:flex items-center gap-8">
-              {["Ana Sayfa", "Hizmetler", "Galeri", "Yorumlar", "İletişim"].map((item, index) => {
-                const sectionId = ["home", "hizmetler", "galeri", "yorumlar", "iletisim"][index];
+              {["Ana Sayfa", "Konum", "Hizmetler", "Galeri", "Yorumlar", "İletişim"].map((item, index) => {
+                const sectionId = ["home", "konum", "hizmetler", "galeri", "yorumlar", "iletisim"][index];
                 return (
                   <motion.button 
                     key={item}
@@ -171,8 +174,8 @@ export default function Home() {
           className="md:hidden bg-white border-t overflow-hidden"
         >
           <div className="px-4 py-3 space-y-1">
-            {["Ana Sayfa", "Hizmetler", "Galeri", "Yorumlar", "İletişim"].map((item, index) => {
-              const sectionId = ["home", "hizmetler", "galeri", "yorumlar", "iletisim"][index];
+            {["Ana Sayfa", "Konum", "Hizmetler", "Galeri", "Yorumlar", "İletişim"].map((item, index) => {
+              const sectionId = ["home", "konum", "hizmetler", "galeri", "yorumlar", "iletisim"][index];
               return (
                 <motion.button 
                   key={item}
@@ -295,6 +298,74 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Location Section - Moved Up */}
+      <section id="konum" className="py-16 md:py-24 bg-gradient-to-br from-amber-50 via-white to-orange-50 relative">
+        <div className="absolute top-0 right-0 w-64 h-64 bg-amber-200/20 rounded-full blur-3xl" />
+        <div className="absolute bottom-0 left-0 w-64 h-64 bg-orange-200/20 rounded-full blur-3xl" />
+        
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div 
+            className="text-center mb-10 md:mb-12"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            variants={fadeInUp}
+          >
+            <span className="inline-flex items-center gap-2 text-amber-600 font-semibold mb-4">
+              <MapPin className="w-5 h-5" />
+              Konum
+            </span>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Bizi Nerede Bulabilirsiniz?</h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              Emek Mahallesi'ndeki durağımıza gelin veya haritadan yol tarifi alın
+            </p>
+          </motion.div>
+
+          <motion.div 
+            className="bg-white rounded-3xl shadow-xl border border-gray-100 overflow-hidden"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            variants={fadeInUp}
+          >
+            {/* Google Maps Embed */}
+            <div className="w-full h-64 md:h-80">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d19!2d29.4115074!3d40.8218297!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cadf003389b7dd%3A0x7c77ad6d9e260f45!2sPapatya%20taksi!5e0!3m2!1str!2str!4v1708531200000!5m2!1str!2str"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              />
+            </div>
+            
+            <div className="p-6 md:p-8">
+              <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+                <div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-2">Çayırova Papatya Taksi</h3>
+                  <p className="text-gray-600">
+                    Emek, 62/5. Sk., 41420 Çayırova/Kocaeli
+                  </p>
+                </div>
+                <motion.a 
+                  href="https://www.google.com/maps/place/Papatya+taksi/@40.8218297,29.4115074,19z/data=!4m6!3m5!1s0x14cadf003389b7dd:0x7c77ad6d9e260f45!8m2!3d40.8221571!4d29.4118746!16s%2Fg%2F11ybzmh5qk?entry=ttu"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-white font-semibold px-6 py-3 rounded-xl transition-all shadow-lg shadow-amber-500/25"
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                >
+                  <Navigation className="w-5 h-5" />
+                  Yol Tarifi Al
+                </motion.a>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
       {/* Features Section */}
       <section id="hizmetler" className="py-20 md:py-32 bg-white relative">
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-amber-50/30 to-transparent" />
@@ -307,7 +378,7 @@ export default function Home() {
             variants={fadeInUp}
           >
             <span className="inline-block text-amber-600 font-semibold mb-4">Hizmetlerimiz</span>
-            <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6">Neden Papatya Taksi?</h2>
+            <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6">Neden Çayırova Papatya Taksi?</h2>
             <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto">
               Müşteri memnuniyeti odaklı hizmet anlayışımızla fark yaratıyoruz
             </p>
@@ -361,7 +432,7 @@ export default function Home() {
             </span>
             <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6">İş Yerimiz</h2>
             <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto">
-              Papatya Taksi durağımızdan görüntüler
+              �ay�rova Papatya Taksi durağımızdan görüntüler
             </p>
           </motion.div>
 
@@ -374,9 +445,11 @@ export default function Home() {
             variants={staggerContainer}
           >
             {[
-              { src: "/images/papatya-taksi-1.jpg", alt: "Papatya Taksi Durağı - Gece Görünümü" },
-              { src: "/images/papatya-taksi-2.jpg", alt: "Papatya Taksi Durağı - Yan Açı" },
-              { src: "/images/papatya-taksi-3.jpg", alt: "Papatya Taksi Durağı - Gündüz Görünümü" }
+              { src: "/images/papatya-taksi-1.jpg", alt: "Çayırova Papatya Taksi Durağı - Gece Görünümü" },
+              { src: "/images/papatya-taksi-2.jpg", alt: "Çayırova Papatya Taksi Durağı - Yan Açı" },
+              { src: "/images/papatya-taksi-3.jpg", alt: "Çayırova Papatya Taksi Durağı - Gündüz Görünümü" },
+              { src: "/images/kart.jpg", alt: "Çayırova Papatya Taksi - Kartvizit" },
+              { src: "/images/galeri-eklenecek.jpg", alt: "Çayırova Papatya Taksi - Galeri" }
             ].map((image, index) => (
               <motion.div 
                 key={index}
@@ -571,20 +644,6 @@ export default function Home() {
                   41420 Çayırova/Kocaeli
                 </p>
               </div>
-              
-              {/* Google Maps Embed */}
-              <div className="rounded-2xl overflow-hidden shadow-lg mb-6 aspect-video">
-                <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d19!2d29.4115074!3d40.8218297!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cadf003389b7dd%3A0x7c77ad6d9e260f45!2sPapatya%20taksi!5e0!3m2!1str!2str!4v1708531200000!5m2!1str!2str"
-                  width="100%"
-                  height="100%"
-                  style={{ border: 0 }}
-                  allowFullScreen
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                  className="w-full h-full"
-                />
-              </div>
 
               <motion.a 
                 href="https://www.google.com/maps/place/Papatya+taksi/@40.8218297,29.4115074,19z/data=!4m6!3m5!1s0x14cadf003389b7dd:0x7c77ad6d9e260f45!8m2!3d40.8221571!4d29.4118746!16s%2Fg%2F11ybzmh5qk?entry=ttu"
@@ -613,10 +672,10 @@ export default function Home() {
               <div className="w-10 h-10 bg-gradient-to-br from-amber-400 to-amber-600 rounded-full flex items-center justify-center">
                 <Car className="w-5 h-5 text-white" />
               </div>
-              <span className="text-xl font-bold text-white">Papatya Taksi</span>
+              <span className="text-xl font-bold text-white">�ay�rova Papatya Taksi</span>
             </motion.div>
             <p className="text-sm text-center">
-              © 2026 Papatya Taksi. Tüm hakları saklıdır.
+              © 2026 �ay�rova Papatya Taksi. Tüm hakları saklıdır.
             </p>
             <div className="flex items-center gap-4">
               <motion.a 
@@ -642,3 +701,4 @@ export default function Home() {
     </div>
   );
 }
+

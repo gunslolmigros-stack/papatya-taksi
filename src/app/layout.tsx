@@ -8,8 +8,8 @@ const geistSans = Geist({
 });
 
 export const metadata: Metadata = {
-  title: "Papatya Taksi - Çayırova / Kocaeli",
-  description: "Papatya Taksi - 7/24 Hizmetinizdeyiz. Emek, Çayırova/Kocaeli. Güvenli ve konforlu ulaşım hizmeti.",
+  title: "Çayırova Papatya Taksi - Çayırova / Kocaeli",
+  description: "Çayırova Papatya Taksi - 7/24 Hizmetinizdeyiz. Emek, Çayırova/Kocaeli. Güvenli ve konforlu ulaşım hizmeti.",
 };
 
 export default function RootLayout({

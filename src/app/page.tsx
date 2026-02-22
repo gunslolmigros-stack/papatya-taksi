@@ -125,10 +125,11 @@ export default function Home() {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              <span className={`text-2xl md:text-3xl font-bold transition-colors ${scrolled ? "text-gray-900" : "text-gray-900"}`}>
-                <span className="bg-gradient-to-r from-amber-500 to-orange-600 bg-clip-text text-transparent">Papatya</span>
-                <span className="text-gray-900"> Taksi</span>
-              </span>
+              <img
+                src="/images/logo-navbar.png"
+                alt="Çayırova Papatya Taksi"
+                className="h-10 md:h-12 w-auto object-contain"
+              />
             </motion.div>
             
             {/* Desktop Menu */}

@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { Phone, Mail, MapPin, Clock, Car, Shield, Star, Menu, X, MessageCircle, ThumbsUp, User, Navigation, Camera } from "lucide-react";
+import { Phone, Mail, MapPin, Clock, Car, Shield, Star, Menu, X, MessageCircle, ThumbsUp, User, Navigation, Camera, MessageSquare } from "lucide-react";
 import Image from "next/image";
 
 // Animation variants
@@ -249,6 +249,19 @@ export default function Home() {
                   Konum
                 </motion.button>
               </motion.div>
+
+              {/* WhatsApp Button */}
+              <motion.a 
+                href="https://wa.me/905071173500?text=Merhaba,%20taksi%20çağırmak%20istiyorum"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 bg-green-500 hover:bg-green-600 text-white font-semibold px-8 py-4 rounded-2xl transition-all shadow-xl shadow-green-500/25 mt-4"
+                whileHover={{ scale: 1.05, y: -2 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <MessageSquare className="w-5 h-5" />
+                WhatsApp'tan Konum At
+              </motion.a>
             </motion.div>
             
             <motion.div 
@@ -597,6 +610,33 @@ export default function Home() {
                 </div>
               </div>
 
+              {/* WhatsApp Section */}
+              <div className="bg-white p-6 md:p-8 rounded-3xl shadow-xl border border-gray-100">
+                <h3 className="text-xl md:text-2xl font-bold mb-6 flex items-center gap-3 text-gray-900">
+                  <div className="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center">
+                    <MessageSquare className="w-6 h-6 text-green-600" />
+                  </div>
+                  WhatsApp
+                </h3>
+                <motion.a 
+                  href="https://wa.me/905071173500?text=Merhaba,%20taksi%20çağırmak%20istiyorum"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-4 bg-green-50 hover:bg-green-100 p-4 rounded-2xl transition-all"
+                  whileHover={{ x: 5 }}
+                  whileTap={{ scale: 0.98 }}
+                >
+                  <div className="w-14 h-14 bg-gradient-to-br from-green-400 to-green-600 rounded-full flex items-center justify-center shadow-lg">
+                    <MessageSquare className="w-6 h-6 text-white" />
+                  </div>
+                  <div>
+                    <p className="text-sm text-gray-500">Konum At</p>
+                    <p className="text-lg md:text-xl font-bold text-gray-900">WhatsApp'tan Yaz</p>
+                    <p className="text-sm text-green-600 mt-1">Konumunuzu atın, sizi alalım</p>
+                  </div>
+                </motion.a>
+              </div>
+
               <div className="bg-white p-6 md:p-8 rounded-3xl shadow-xl border border-gray-100">
                 <h3 className="text-xl md:text-2xl font-bold mb-6 flex items-center gap-3 text-gray-900">
                   <div className="w-12 h-12 bg-amber-100 rounded-xl flex items-center justify-center">
@@ -713,6 +753,16 @@ export default function Home() {
                 whileTap={{ scale: 0.9 }}
               >
                 <Mail className="w-5 h-5" />
+              </motion.a>
+              <motion.a 
+                href="https://wa.me/905071173500" 
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 bg-gray-800 hover:bg-green-500 rounded-full flex items-center justify-center transition-colors"
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+              >
+                <MessageSquare className="w-5 h-5" />
               </motion.a>
             </div>
           </div>
